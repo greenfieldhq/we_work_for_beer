@@ -1,9 +1,17 @@
 <h1>{{model.name}}</h1>
 
-<ul class="floors-list">
-{{#each model.floors as |floor|}}
-  <li>{{floor.name}}</li>
-{{/each}}
-</ul>
+<div class="floors">
+  {{#each model.floors as |floor|}}
+    <div class="floor">
+      <h3>{{floor.name}}</h3>
+
+      {{#each floor.beers as |beer|}}
+        <div class="beers">
+          <p class="beer">{{beer.name}}</p>
+        </div>
+      {{/each}}
+    </div>
+  {{/each}}
+</div>
 
 {{outlet}}

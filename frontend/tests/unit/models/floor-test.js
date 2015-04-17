@@ -5,7 +5,7 @@ import {
 
 moduleForModel('floor', {
   // Specify the other units that are required for this test.
-  needs: ['model:location']
+  needs: ['model:location', 'model:beer']
 });
 
 test('it exists', function(assert) {
