@@ -12,9 +12,11 @@ export default [
   {
     id: 3,
     name: "Fort Point",
-    address: "51 Melcher Street"
+    address: "51 Melcher Street",
+    floor_ids: [1, 2, 3, 4]
   },
   {
+    type: "location",
     id: 4,
     name: "South Station",
     address: "745 Atlantic Ave"
@@ -142,7 +144,8 @@ export default [
   {
     id: 29,
     name: "DUMBO",
-    address: "81 Prospect Street"
+    address: "81 Prospect Street",
+    floor_ids: [5, 6, 7]
   },
   {
     id: 30,

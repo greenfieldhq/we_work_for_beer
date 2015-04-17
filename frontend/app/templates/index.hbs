@@ -2,7 +2,7 @@
 
 <ul class="locations-list">
 {{#each model as |location|}}
-  <li>{{location.name}}</li>
+  <li>{{link-to location.name 'location' location}}</li>
 {{/each}}
 </ul>
 

@@ -1,5 +1,23 @@
 export default function() {
-  this.get('/locations', 'locations');
+  this.get('/locations', (db) => {
+    const locations = db.locations;
+    const floors = db.floors;
+
+    return {
+      locations: locations,
+      floors: floors
+    };
+  });
+
+  this.get('/locations/:id', function(db, request) {
+    const location = db.locations.find(+request.params.id);
+    const floors = db.floors.filterBy('location_id', location.id);
+
+    return {
+      location: location,
+      floors: floors
+    };
+  });
 
   // These comments are here to help you get started. Feel free to delete them.
 

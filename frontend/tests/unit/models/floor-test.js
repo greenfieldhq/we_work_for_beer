@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('location', {
+moduleForModel('floor', {
   // Specify the other units that are required for this test.
-  needs: ['model:floor']
+  needs: ['model:location']
 });
 
 test('it exists', function(assert) {
