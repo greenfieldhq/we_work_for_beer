@@ -3,12 +3,14 @@ export default [
   {
     id: 1,
     name: "Floor 1",
-    location_id: 3
+    location_id: 3,
+    beer_ids: [1]
   },
   {
     id: 2,
     name: "Floor 2",
-    location_id: 3
+    location_id: 3,
+    beer_ids: [1]
   },
   {
     id: 3,

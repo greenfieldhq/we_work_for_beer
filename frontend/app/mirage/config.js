@@ -1,21 +1,35 @@
 export default function() {
   this.get('/locations', (db) => {
     const locations = db.locations;
-    const floors = db.floors;
 
     return {
-      locations: locations,
-      floors: floors
+      locations: locations
     };
   });
 
-  this.get('/locations/:id', function(db, request) {
+  this.get('/locations/:id', (db, request) => {
     const location = db.locations.find(+request.params.id);
     const floors = db.floors.filterBy('location_id', location.id);
+    const beers = db.beers.filter((beer) => {
+      const floorIds = beer.floor_ids || [];
+      return floorIds.any(id => location.floor_ids.contains(id));
+    });
 
     return {
       location: location,
-      floors: floors
+      floors: floors,
+      beers: beers
+    };
+  });
+
+  this.get('/floors/:id', (db, request) => {
+    const floor = db.floors.find(+request.params.id);
+    const beerIds = floor.beer_ids || [];
+    const beers = beerIds.map(id => db.beers.find(id));
+
+    return {
+      floor: floor,
+      beers: beers
     };
   });
 
