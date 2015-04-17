@@ -1,3 +1,4 @@
-import JsonApiSerializer from 'ember-json-api/json-api-serializer';
+import DS from 'ember-data';
 
-export default JsonApiSerializer;
+export default DS.ActiveModelSerializer.extend({
+});

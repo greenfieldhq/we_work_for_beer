@@ -1,3 +1,4 @@
-import JsonApiAdapter from 'ember-json-api/json-api-adapter';
+import DS from 'ember-data';
 
-export default JsonApiAdapter;
+export default DS.ActiveModelAdapter.extend({
+});
