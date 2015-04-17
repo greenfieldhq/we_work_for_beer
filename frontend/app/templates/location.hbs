@@ -1,0 +1,9 @@
+<h1>{{model.name}}</h1>
+
+<ul class="floors-list">
+{{#each model.floors as |floor|}}
+  <li>{{floor.name}}</li>
+{{/each}}
+</ul>
+
+{{outlet}}

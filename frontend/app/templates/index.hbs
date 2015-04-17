@@ -1,0 +1,9 @@
+<h1>Locations</h1>
+
+<ul class="locations-list">
+{{#each model as |location|}}
+  <li>{{link-to location.name 'location' location}}</li>
+{{/each}}
+</ul>
+
+{{outlet}}
