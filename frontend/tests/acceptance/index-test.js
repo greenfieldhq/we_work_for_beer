@@ -7,7 +7,7 @@ import startApp from 'we-work-for-beer/tests/helpers/start-app';
 
 let application;
 
-module('Acceptance: Index', {
+module('Acceptance: Locations', {
   beforeEach: function() {
     application = startApp();
   },
@@ -17,15 +17,15 @@ module('Acceptance: Index', {
   }
 });
 
-test('visiting /index', function(assert) {
+test('visiting /', function(assert) {
   const locations = server.createList('location', 3);
 
   visit('/');
 
-  andThen(function() {
-    assert.equal(currentRouteName(), 'index');
+  andThen(() => {
+    assert.equal(currentRouteName(), 'locations.index');
 
-    const $locationsList = find('.locations-list li');
+    const $locationsList = find('.locations-list .location');
 
     assert.equal($locationsList.length, 3);
   });

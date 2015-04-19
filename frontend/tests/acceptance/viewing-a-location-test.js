@@ -34,7 +34,7 @@ test('all the floors and their beer are displayed', function(assert) {
   visit(`/locations/${location.id}`);
 
   andThen(() => {
-    assert.equal(currentRouteName(), 'location');
+    assert.equal(currentRouteName(), 'locations.location');
 
     const $floors = find('.floors .floor');
     assert.equal($floors.length, 3, 'all the floors are displayed');

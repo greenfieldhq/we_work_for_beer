@@ -1,0 +1,25 @@
+<div class="panel">
+  <div class="panel__body">
+    <h1 class="page-title">{{model.name}}</h1>
+  </div>
+</div>
+
+<div class="floors">
+  {{#each model.floors as |floor|}}
+    <div class="floor panel">
+      <div class="panel__header">
+        <h3 class="panel__title">{{floor.name}}</h3>
+      </div>
+
+      <div class="panel__body">
+        {{#each floor.beers as |beer|}}
+          <div class="beers">
+            <p class="beer">{{beer.name}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+{{outlet}}
