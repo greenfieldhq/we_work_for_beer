@@ -19,7 +19,9 @@ defmodule WeWorkForBeer.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", WeWorkForBeer do
-  #   pipe_through :api
-  # end
+  scope "/api", WeWorkForBeer do
+    pipe_through :api
+
+    resources "/locations", LocationController, only: [:index]
+  end
 end
