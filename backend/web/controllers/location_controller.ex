@@ -8,4 +8,9 @@ defmodule WeWorkForBeer.LocationController do
     locations = Repo.all(Location)
     render conn, locations: locations
   end
+
+  def show(conn, %{"id" => id}) do
+    location = Repo.get(Location, id)
+    render conn, location: location
+  end
 end

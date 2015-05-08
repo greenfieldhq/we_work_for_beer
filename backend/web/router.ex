@@ -22,6 +22,6 @@ defmodule WeWorkForBeer.Router do
   scope "/api", WeWorkForBeer do
     pipe_through :api
 
-    resources "/locations", LocationController, only: [:index]
+    resources "/locations", LocationController, only: [:index, :show]
   end
 end
