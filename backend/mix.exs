@@ -32,6 +32,7 @@ defmodule WeWorkForBeer.Mixfile do
      {:phoenix_ecto, "~> 0.3"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_live_reload, "~> 0.3.2"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:remodel, "~> 0.0.1"}]
   end
 end

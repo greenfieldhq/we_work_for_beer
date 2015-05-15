@@ -1,4 +1,6 @@
 export default function() {
+  this.namespace = 'api';
+  
   this.get('/locations', (db) => {
     const locations = db.locations;
 
