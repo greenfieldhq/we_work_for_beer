@@ -18,6 +18,13 @@ defmodule WeWorkForBeer.Router do
     get "/", PageController, :index
   end
 
+
+  scope "/api/v1", alias: WeWorkForBeer do
+    pipe_through :api
+
+    resources "locations", LocationController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", WeWorkForBeer do
   #   pipe_through :api
