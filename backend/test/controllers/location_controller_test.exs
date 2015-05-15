@@ -11,10 +11,12 @@ defmodule WeWorkForBeer.LocationControllerTest do
   test "GET /locations", %{conn: conn} do
     location1 = Repo.insert %Location{
       name: "South Station",
+      city: "Boston",
       address: "745 Atlantic Ave"
     }
     location2 = Repo.insert %Location{
       name: "DUMBO",
+      city: "New York",
       address: "81 Prospect Street"
     }
 
@@ -25,12 +27,14 @@ defmodule WeWorkForBeer.LocationControllerTest do
       %{
         "id" => location1.id,
         "name" => location1.name,
-        "address" => location1.address
+        "address" => location1.address,
+        "city" => location1.city
       },
       %{
         "id" => location2.id,
         "name" => location2.name,
-        "address" => location2.address
+        "address" => location2.address,
+        "city" => location2.city
       }
     ]
   end
@@ -38,6 +42,7 @@ defmodule WeWorkForBeer.LocationControllerTest do
   test "GET /locations/:id", %{conn: conn} do
     location = Repo.insert %Location{
       name: "South Station",
+      city: "Boston",
       address: "745 Atlantic Ave"
     }
 
@@ -47,7 +52,8 @@ defmodule WeWorkForBeer.LocationControllerTest do
     assert body["location"] == %{
       "id" => location.id,
       "name" => location.name,
-      "address" => location.address
+      "address" => location.address,
+      "city" => location.city
     }
   end
 end

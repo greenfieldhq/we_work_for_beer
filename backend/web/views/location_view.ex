@@ -1,7 +1,7 @@
 defmodule WeWorkForBeer.LocationView do
   use WeWorkForBeer.Web, :view
 
-  @attributes [:id, :address, :name]
+  @attributes [:id, :address, :city, :name]
 
   def render("index.json", %{locations: locations}) do
     %{locations: render_many(locations, "location.json")}

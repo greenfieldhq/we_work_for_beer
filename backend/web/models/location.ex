@@ -2,13 +2,14 @@ defmodule WeWorkForBeer.Location do
   use WeWorkForBeer.Web, :model
 
   schema "locations" do
-    field :name, :string
     field :address, :string
+    field :city, :string
+    field :name, :string
 
     timestamps
   end
 
-  @required_fields ~w(name address)
+  @required_fields ~w(name city address)
   @optional_fields ~w()
 
   @doc """
