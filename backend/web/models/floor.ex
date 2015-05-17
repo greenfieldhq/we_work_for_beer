@@ -1,19 +1,17 @@
-defmodule WeWorkForBeer.Location do
+defmodule WeWorkForBeer.Floor do
   use WeWorkForBeer.Web, :model
 
-  alias WeWorkForBeer.Floor
+  alias WeWorkForBeer.Location
 
-  schema "locations" do
-    has_many :floors, Floor
+  schema "floors" do
+    belongs_to :location, Location
 
-    field :address, :string
-    field :city, :string
     field :name, :string
 
     timestamps
   end
 
-  @required_fields ~w(name city address)
+  @required_fields ~w(name location_id)
   @optional_fields ~w()
 
   @doc """

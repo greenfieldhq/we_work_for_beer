@@ -1,6 +1,7 @@
 defmodule WeWorkForBeer.LocationControllerTest do
   use WeWorkForBeer.ConnCase
 
+  alias WeWorkForBeer.Floor
   alias WeWorkForBeer.Location
 
   setup do
@@ -28,13 +29,15 @@ defmodule WeWorkForBeer.LocationControllerTest do
         "id" => location1.id,
         "name" => location1.name,
         "address" => location1.address,
-        "city" => location1.city
+        "city" => location1.city,
+        "floor_ids" => []
       },
       %{
         "id" => location2.id,
         "name" => location2.name,
         "address" => location2.address,
-        "city" => location2.city
+        "city" => location2.city,
+        "floor_ids" => []
       }
     ]
   end
@@ -45,6 +48,8 @@ defmodule WeWorkForBeer.LocationControllerTest do
       city: "Boston",
       address: "745 Atlantic Ave"
     }
+    floor1 = Repo.insert %Floor{location_id: location.id, name: "Floor 1"}
+    floor2 = Repo.insert %Floor{location_id: location.id, name: "Floor 2"}
 
     conn = get conn, location_path(conn, :show, location)
     body = json_response(conn, 200)
@@ -53,7 +58,8 @@ defmodule WeWorkForBeer.LocationControllerTest do
       "id" => location.id,
       "name" => location.name,
       "address" => location.address,
-      "city" => location.city
+      "city" => location.city,
+      "floor_ids" => [floor2.id, floor1.id]
     }
   end
 end
