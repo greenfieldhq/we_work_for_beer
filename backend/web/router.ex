@@ -23,6 +23,7 @@ defmodule WeWorkForBeer.Router do
     pipe_through :api
 
     resources "locations", LocationController, only: [:index, :show]
+    resources "floors", FloorController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.

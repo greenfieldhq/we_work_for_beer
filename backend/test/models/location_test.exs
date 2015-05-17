@@ -3,7 +3,12 @@ defmodule WeWorkForBeer.LocationTest do
 
   alias WeWorkForBeer.Location
 
-  @valid_attrs %{address: "some content", name: "some content"}
+  @valid_attrs %{
+    address: "51 Melcher St",
+    city: "Boston",
+    name: "Fort Point"
+  }
+
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
