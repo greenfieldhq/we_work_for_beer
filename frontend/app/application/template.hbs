@@ -2,6 +2,12 @@
   <div class="header">
     <h1 class="header__title">WeWork for Beer</h1>
   </div>
+
+  {{#if session.isAuthenticated}}
+    <button {{action 'invalidateSession'}}>Logout</button>
+  {{else}}
+    <button {{action 'authenticateSession'}}>Login</button>
+  {{/if}}
 </header>
 
 <div class="container">

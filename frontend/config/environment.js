@@ -16,6 +16,21 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    torii: {
+      providers: {
+        'facebook-oauth2': {
+          apiKey: process.env.FACEBOOK_CLIENT_ID,
+          scope: 'email,public_profile',
+          redirectUri: 'http://localhost:4200/'
+        }
+      }
+    },
+
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:oauth2-bearer',
+      routeAfterAuthentication: 'locations'
     }
   };
 
@@ -25,6 +40,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV['simple-auth-oauth2'] = {
+      serverTokenEndpoint: '/api/v1/token'
+    };
   }
 
   if (environment === 'test') {
