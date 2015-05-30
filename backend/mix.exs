@@ -28,10 +28,13 @@ defmodule WeWorkForBeer.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "~> 0.12"},
-     {:phoenix_ecto, "~> 0.3"},
-     {:postgrex, ">= 0.0.0"},
-     {:phoenix_live_reload, "~> 0.3.2"},
-     {:cowboy, "~> 1.0"}]
+    [
+      {:phoenix, "~> 0.13"},
+      {:phoenix_ecto, "~> 0.4"},
+      {:postgrex, ">= 0.0.0"},
+      {:phoenix_html, "~> 1.0"},
+      {:phoenix_live_reload, "~> 0.4"},
+      {:cowboy, "~> 1.0"}
+    ]
   end
 end
