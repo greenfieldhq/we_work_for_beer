@@ -24,8 +24,9 @@ defmodule WeWorkForBeer.Router do
 
     post "token", APIKeyController, :create
 
-    resources "locations", LocationController, only: [:index, :show]
+    resources "beers", BeerController, only: [:index, :show]
     resources "floors", FloorController, only: [:index, :show]
+    resources "locations", LocationController, only: [:index, :show]
   end
 
   # Other scopes may use custom stacks.

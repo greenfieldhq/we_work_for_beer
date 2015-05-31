@@ -1,0 +1,21 @@
+defmodule WeWorkForBeer.FloorBeer do
+  use WeWorkForBeer.Web, :model
+
+  alias WeWorkForBeer.Beer
+  alias WeWorkForBeer.Floor
+
+  schema "floor_beers" do
+    belongs_to :beer, Beer
+    belongs_to :floor, Floor
+
+    timestamps
+  end
+
+  @required_fields ~w(floor_id beer_id)
+  @optional_fields ~w()
+
+  def changeset(model, params \\ :empty) do
+    model
+    |> cast(params, @required_fields, @optional_fields)
+  end
+end
