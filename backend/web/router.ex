@@ -22,6 +22,8 @@ defmodule WeWorkForBeer.Router do
   scope "/api/v1", alias: WeWorkForBeer do
     pipe_through :api
 
+    post "token", APIKeyController, :create
+
     resources "locations", LocationController, only: [:index, :show]
     resources "floors", FloorController, only: [:index, :show]
   end
