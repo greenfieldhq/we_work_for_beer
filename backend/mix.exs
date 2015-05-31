@@ -17,7 +17,7 @@ defmodule WeWorkForBeer.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {WeWorkForBeer, []},
-     applications: [:phoenix, :cowboy, :logger, :ecto]]
+     applications: [:phoenix, :cowboy, :logger, :ecto, :hackney]]
   end
 
   # Specifies which paths to compile per environment
@@ -34,7 +34,11 @@ defmodule WeWorkForBeer.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 1.0"},
       {:phoenix_live_reload, "~> 0.4"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:oauth2, "~> 0.1.1"},
+      {:secure_random, "~> 0.1"},
+      {:timex, "~> 0.13.4"},
+      {:mock, "~> 0.1.1"}
     ]
   end
 end
