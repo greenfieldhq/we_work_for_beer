@@ -34,6 +34,11 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.contentSecurityPolicy = {
+    'img-src': "'self' data: *.googleapis.com *.gstatic.com *.google-analytics.com *.intercomcdn.com",
+    'script-src': "'self' 'unsafe-inline' *.googleapis.com *.gstatic.com *.google-analytics.com *.intercomcdn.com",
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -43,6 +48,12 @@ module.exports = function(environment) {
 
     ENV['simple-auth-oauth2'] = {
       serverTokenEndpoint: '/api/v1/token'
+    };
+  }
+
+  if (environment === 'production') {
+    ENV.googleAnalytics = {
+      webPropertyId: process.env.GOOGLE_ANALYTICS_ID
     };
   }
 
