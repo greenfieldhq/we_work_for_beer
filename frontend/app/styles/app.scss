@@ -25,7 +25,7 @@ a:visited {
 
 .sidebar {
   flex: 0 0 33.33333%;
-  margin: $grid-gutter 0 0 $grid-gutter;
+  margin: $grid-gutter 0 0 0;
 }
 
 .main-content {
@@ -73,6 +73,16 @@ a:visited {
 
   .grid {
     margin: -0.5em 0 -0.5em;
+    flex-wrap: wrap;
+  }
+
+  .header-left {
+    flex-basis: 131px;
+  }
+
+  .header-right {
+    flex-basis: 160px;
+    text-align: right;
   }
 }
 
@@ -121,10 +131,6 @@ a:visited {
   padding-top: 2px;
 }
 
-.footer {
-  padding: 25px;
-}
-
-.text-align-right {
-  text-align: right;
+footer {
+  margin-top: 25px;
 }
