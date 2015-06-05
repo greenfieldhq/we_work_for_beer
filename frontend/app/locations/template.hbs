@@ -6,8 +6,14 @@
 
     <div class="locations-list list-group">
       {{#each model as |location|}}
-        {{link-to location.name "locations.location" location.id
-          class="location list-group__item"}}
+        {{#link-to "locations.location" location.id}}
+          <div class="location list-group__item">
+            {{location.name}}
+            <span class="city">
+              {{location.city}}
+            </span>
+          </div>
+        {{/link-to}}
       {{/each}}
     </div>
   </div>

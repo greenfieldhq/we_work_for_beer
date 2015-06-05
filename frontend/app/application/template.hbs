@@ -1,6 +1,17 @@
 <header class="site-header">
   <div class="header">
-    <h1 class="header__title">WeWork for Beer</h1>
+    <div class="container">
+      <div class="grid">
+        <div class="grid-cell">
+          <h1 class="header__title">WeWork for Beer</h1>
+        </div>
+        <div class="grid-cell text-align-right">
+          <a href="http://greenfieldhq.com">
+            <img id="built-by-greenfield" src="assets/images/built-by-greenfield-dark.png"/>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   {{#if session.isAuthenticated}}
@@ -13,5 +24,13 @@
 <div class="container">
   <div class="grid">
     {{outlet}}
+  </div>
+</div>
+
+<div class="container">
+  <div class="grid footer">
+      <div class="grid-cell text-align-right">
+        <img id="powered-by-brewerydb" src="assets/images/powered-by-brewerydb.png"/>
+      </div>
   </div>
 </div>

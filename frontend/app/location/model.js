@@ -6,5 +6,6 @@ const hasMany = DS.hasMany;
 export default DS.Model.extend({
   floors: hasMany('floor', { async: true }),
 
-  name: attr('string')
+  name: attr('string'),
+  city: attr('string')
 });
