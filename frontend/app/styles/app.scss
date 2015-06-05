@@ -69,7 +69,11 @@ a:visited {
   padding: 1.5em;
   background-color: #252729;
   color: $white;
-  text-align: center;
+  margin: 0;
+
+  .grid {
+    margin: -0.5em 0 -0.5em;
+  }
 }
 
 .header__title {
@@ -91,6 +95,10 @@ a:visited {
   &.active {
     background-color: #f7f7f7;
   }
+
+  .city {
+    color: #CCC;
+  }
 }
 
 .locations-list a {
@@ -102,4 +110,21 @@ a:visited {
   margin: 0;
   text-align: center;
   text-transform: uppercase;
+}
+
+#powered-by-brewerydb {
+  max-height: 25px;
+}
+
+#built-by-greenfield {
+  max-height: 30px;
+  padding-top: 2px;
+}
+
+.footer {
+  padding: 25px;
+}
+
+.text-align-right {
+  text-align: right;
 }
