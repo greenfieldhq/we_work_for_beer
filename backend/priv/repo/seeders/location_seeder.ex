@@ -1,4 +1,4 @@
-defmodule LocationSeeder do
+defmodule WeWorkForBeer.LocationSeeder do
   alias WeWorkForBeer.Floor
   alias WeWorkForBeer.Location
   alias WeWorkForBeer.Repo
@@ -423,4 +423,4 @@ defmodule LocationSeeder do
   end
 end
 
-LocationSeeder.seed
+WeWorkForBeer.LocationSeeder.seed
