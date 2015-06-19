@@ -38,7 +38,9 @@ defmodule WeWorkForBeer.Mixfile do
       {:oauth2, "~> 0.1.1"},
       {:secure_random, "~> 0.1"},
       {:timex, "~> 0.13.4"},
-      {:mock, "~> 0.1.1"}
+      {:mock, "~> 0.1.1"},
+      {:exrm, "~> 0.17.0"},
+      {:relx, github: "erlware/relx"}
     ]
   end
 end
