@@ -40,7 +40,8 @@ defmodule WeWorkForBeer.Mixfile do
       {:timex, "~> 0.13.4"},
       {:mock, "~> 0.1.1"},
       {:exrm, "~> 0.17.0"},
-      {:relx, github: "erlware/relx"}
+      {:relx, github: "erlware/relx"},
+      {:meck, "~> 0.8.2", [optional: false, hex: :meck, override: true]}
     ]
   end
 end

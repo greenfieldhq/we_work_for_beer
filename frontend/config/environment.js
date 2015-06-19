@@ -23,7 +23,7 @@ module.exports = function(environment) {
         'facebook-oauth2': {
           apiKey: process.env.FACEBOOK_CLIENT_ID,
           scope: 'email,public_profile',
-          redirectUri: 'http://localhost:4200/'
+          redirectUri: 'https://weworkfor.beer/api/v1/token'
         }
       }
     },
