@@ -24,8 +24,8 @@ server {
   # listen on the wrong host
   server_name www.weworkfor.beer.com;
 
-  ssl_certificate     /home/ubuntu/Source/we_work_for_beer/config/ssl/we_work_for_beer.crt;
-  ssl_certificate_key /home/ubuntu/Source/we_work_for_beer/config/ssl/we_work_for_beer_private.key;
+  ssl_certificate     /home/ubuntu/Source/we_work_for_beer/config/ssl/weworkfor_beer_bundle.crt;
+  ssl_certificate_key /home/ubuntu/Source/we_work_for_beer/config/ssl/weworkfor_beer.key;
   include /etc/nginx/directive-only/ssl.conf;
   include /etc/nginx/directive-only/ssl-stapling.conf;
 
@@ -38,10 +38,10 @@ server {
   listen 443 ssl spdy;
 
   # The host name to respond to
-  server_name summjudg.com;
+  server_name weworkfor.beer;
 
-  ssl_certificate     /home/ubuntu/Source/we_work_for_beer/config/ssl/we_work_for_beer.crt;
-  ssl_certificate_key /home/ubuntu/Source/we_work_for_beer/config/ssl/we_work_for_beer_private.key;
+  ssl_certificate     /home/ubuntu/Source/we_work_for_beer/config/ssl/weworkfor_beer_bundle.crt;
+  ssl_certificate_key /home/ubuntu/Source/we_work_for_beer/config/ssl/weworkfor_beer.key;
   include /etc/nginx/directive-only/ssl.conf;
   include /etc/nginx/directive-only/ssl-stapling.conf;
 
@@ -72,15 +72,7 @@ server {
   # These location prefix matches proxy to Rails.
   # They use the ^~ modifier in order to allow sidekiq to serve
   # the CSS/JS for the web UI.
-  location ^~ /api {
-    try_files $uri @phoenix_wework_for_beer;
-  }
-
-  location ^~ /sidekiq {
-    try_files $uri @phoenix_wework_for_beer;
-  }
-
-  location ^~ /email_processor {
+  location ^~ /api/v1 {
     try_files $uri @phoenix_wework_for_beer;
   }
 
