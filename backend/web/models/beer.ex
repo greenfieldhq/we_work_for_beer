@@ -1,6 +1,7 @@
 defmodule WeWorkForBeer.Beer do
   use WeWorkForBeer.Web, :model
 
+  alias WeWorkForBeer.Beer
   alias WeWorkForBeer.FloorBeer
   alias WeWorkForBeer.Repo
 
@@ -24,5 +25,12 @@ defmodule WeWorkForBeer.Beer do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> validate_unique(:uid, on: Repo)
+  end
+
+  def find_by_uid(uid) do
+    query = from b in Beer,
+            where: b.uid == ^uid
+
+    Repo.one query
   end
 end

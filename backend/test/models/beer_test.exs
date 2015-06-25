@@ -24,4 +24,17 @@ defmodule WeWorkForBeer.BeerTest do
 
     refute changeset.valid?
   end
+
+  test "find_by_uid/1 - returns beer if beer with uid exists" do
+    attrs = Map.put(@valid_attrs, :uid, "123")
+    beer = Repo.insert Beer.changeset(%Beer{}, attrs)
+
+    found_beer = Beer.find_by_uid("123")
+
+    assert found_beer == beer
+  end
+
+  test "find_by_uid/1 - returns nil if beer with uid does not exist" do
+    assert nil == Beer.find_by_uid("123")
+  end
 end
