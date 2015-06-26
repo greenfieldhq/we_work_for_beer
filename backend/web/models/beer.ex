@@ -14,12 +14,16 @@ defmodule WeWorkForBeer.Beer do
     field :style, :string
     field :abv, :decimal
     field :description, :string
+    field :icon_small, :string
+    field :icon_medium, :string
+    field :icon_large, :string
+    field :brewery_name, :string
 
     timestamps
   end
 
   @required_fields ~w(uid name)
-  @optional_fields ~w(style abv description)
+  @optional_fields ~w(style abv description icon_small icon_medium icon_large brewery_name)
 
   def changeset(model, params \\ :empty) do
     model
