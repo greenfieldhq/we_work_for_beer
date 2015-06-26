@@ -26,7 +26,7 @@ defmodule WeWorkForBeer.APIKey do
     |> Map.put(:expires_at, _generate_expires_at)
 
     APIKey.changeset(%APIKey{}, attrs)
-    |> Repo.insert
+    |> Repo.insert!
   end
 
   defp _generate_access_token do

@@ -31,7 +31,7 @@ defmodule WeWorkForBeer.APIKeyController do
 
     if changeset.valid? do
       Repo.transaction fn ->
-        user = Repo.insert(changeset)
+        user = Repo.insert!(changeset)
         APIKey.create_for(user)
       end
     end
@@ -41,7 +41,7 @@ defmodule WeWorkForBeer.APIKeyController do
     changeset = User.changeset(user, attributes)
 
     if changeset.valid? do
-      Repo.update(changeset)
+      Repo.update!(changeset)
     end
   end
 end
