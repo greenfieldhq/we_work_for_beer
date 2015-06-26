@@ -10,8 +10,7 @@ config :we_work_for_beer, WeWorkForBeer.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
-  cache_static_lookup: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch"]]
+  cache_static_lookup: false
 
 # Watch static and templates for browser reloading.
 config :we_work_for_beer, WeWorkForBeer.Endpoint,
