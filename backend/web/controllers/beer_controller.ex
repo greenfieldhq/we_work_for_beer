@@ -15,7 +15,7 @@ defmodule WeWorkForBeer.BeerController do
     changeset = Beer.changeset(%Beer{}, beer_params)
 
     if changeset.valid? do
-      beer = Repo.insert(changeset)
+      beer = Repo.insert!(changeset)
       render(conn, "show.json", beer: beer)
     else
       conn

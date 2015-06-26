@@ -16,7 +16,7 @@ defmodule WeWorkForBeer.LocationSeeder do
   defp _create_location(attrs) do
     %Location{}
     |> Map.merge(attrs)
-    |> Repo.insert
+    |> Repo.insert!
   end
 
   defp _create_or_update_location(attrs) do
@@ -35,7 +35,7 @@ defmodule WeWorkForBeer.LocationSeeder do
   defp _create_floor(attrs) do
     %Floor{}
     |> Map.merge(attrs)
-    |> Repo.insert
+    |> Repo.insert!
   end
 
   defp _find_or_create_floor(attrs) do
