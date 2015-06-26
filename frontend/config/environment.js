@@ -22,7 +22,7 @@ module.exports = function(environment) {
         'facebook-oauth2': {
           apiKey: process.env.FACEBOOK_CLIENT_ID,
           scope: 'email,public_profile',
-          redirectUri: process.env.TORII_REDIRECT_URI
+          redirectUri: process.env.FACEBOOK_REDIRECT_URI
         }
       }
     },
@@ -44,6 +44,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    }
 
     ENV['simple-auth-oauth2'] = {
       serverTokenEndpoint: '/api/v1/token'
