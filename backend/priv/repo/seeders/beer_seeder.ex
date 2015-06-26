@@ -45,7 +45,7 @@ defmodule WeWorkForBeer.BeerSeeder do
     }
 
     Beer.changeset(%Beer{}, attrs)
-    |> Repo.insert
+    |> Repo.insert!
   end
 end
 
