@@ -33,4 +33,10 @@ defmodule WeWorkForBeer.Beer do
 
     Repo.one query
   end
+
+  def search(query, search_query) do
+    name_query = "%#{search_query}%"
+
+    (from b in query, where: ilike(b.name, ^name_query))
+  end
 end

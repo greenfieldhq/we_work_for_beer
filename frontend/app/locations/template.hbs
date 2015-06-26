@@ -5,7 +5,7 @@
     </div>
 
     <div class="locations-list list-group">
-      {{#each model as |location|}}
+      {{#each model key="id" as |location|}}
         {{#link-to "locations.location" location.id}}
           <div class="location list-group__item">
             {{location.name}}

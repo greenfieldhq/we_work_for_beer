@@ -3,16 +3,15 @@ defmodule WeWorkForBeer.FloorController do
 
   alias WeWorkForBeer.Floor
 
-  plug :scrub_params, "location" when action in [:create, :update]
   plug :action
 
   def index(conn, _params) do
-    floors = Repo.all(Floor)
+    floors = Repo.all(from f in Floor, preload: [:beers])
     render(conn, "index.json", floors: floors)
   end
 
   def show(conn, %{"id" => id}) do
-    floor = Repo.get(Floor, id)
+    floor = Repo.one(from f in Floor, where: f.id == ^id, preload: [:beers])
     render conn, "show.json", floor: floor
   end
 end

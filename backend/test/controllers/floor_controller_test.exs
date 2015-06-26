@@ -25,12 +25,14 @@ defmodule WeWorkForBeer.FloorControllerTest do
       %{
         "id" => floor1.id,
         "name" => floor1.name,
-        "location_id" => floor1.location_id
+        "location_id" => floor1.location_id,
+        "beer_ids" => []
       },
       %{
         "id" => floor2.id,
         "name" => floor2.name,
-        "location_id" => floor2.location_id
+        "location_id" => floor2.location_id,
+        "beer_ids" => []
       }
     ]
   end
@@ -47,7 +49,8 @@ defmodule WeWorkForBeer.FloorControllerTest do
     assert body["floor"] == %{
       "id" => floor.id,
       "name" => floor.name,
-      "location_id" => floor.location_id
+      "location_id" => floor.location_id,
+      "beer_ids" => []
     }
   end
 end
