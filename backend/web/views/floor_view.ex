@@ -12,6 +12,11 @@ defmodule WeWorkForBeer.FloorView do
   end
 
   def render("floor.json", %{floor: floor}) do
-    Map.take(floor, @attributes)
+    %{
+      id: floor.id,
+      name: floor.name,
+      location_id: floor.location_id,
+      beer_ids: Enum.map(floor.beers, &(&1.id))
+    }
   end
 end

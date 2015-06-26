@@ -1,4 +1,5 @@
 defmodule WeWorkForBeer.BeerController do
+  import Ecto.Query
   use WeWorkForBeer.Web, :controller
 
   alias WeWorkForBeer.Beer
@@ -6,8 +7,17 @@ defmodule WeWorkForBeer.BeerController do
   plug :scrub_params, "beer" when action in [:create, :update]
   plug :action
 
+  def index(conn, %{"query" => query}) do
+    beers =
+      from(b in Beer, limit: 20)
+      |> Beer.search(query)
+      |> Repo.all
+
+    render(conn, "index.json", beers: beers)
+  end
+
   def index(conn, _params) do
-    beers = Repo.all(Beer)
+    beers = from(b in Beer, limit: 20) |> Repo.all
     render(conn, "index.json", beers: beers)
   end
 

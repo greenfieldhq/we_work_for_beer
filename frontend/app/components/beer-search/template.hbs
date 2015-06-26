@@ -1,0 +1,11 @@
+<form {{action "search" on="submit"}}>
+  {{input value=query placeholder="Search by name"}}
+</form>
+
+<div class="list-group">
+  {{#each beers as |beer|}}
+    <div {{action "select" beer}} class="list-group__item">
+      {{beer.name}}
+    </div>
+  {{/each}}
+</div>
