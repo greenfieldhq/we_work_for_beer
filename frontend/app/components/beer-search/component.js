@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import request from 'ic-ajax';
 
 const get = Ember.get;
 const set = Ember.set;

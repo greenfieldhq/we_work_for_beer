@@ -24,11 +24,11 @@ export default Ember.Component.extend({
         floor: floor
       });
 
-      floorBeer.save().then((floorBeer) => {
+      floorBeer.save().then(() => {
         get(floor, 'beers').pushObject(beer);
         set(this, 'searchResults', Ember.A());
         set(this, 'isAddingBeer', false);
-      }, (errors) => {
+      }, () => {
         // TODO: handle error
       });
     },
