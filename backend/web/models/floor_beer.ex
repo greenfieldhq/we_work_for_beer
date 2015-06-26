@@ -3,6 +3,7 @@ defmodule WeWorkForBeer.FloorBeer do
 
   alias WeWorkForBeer.Beer
   alias WeWorkForBeer.Floor
+  alias WeWorkForBeer.Repo
 
   schema "floor_beers" do
     belongs_to :beer, Beer
@@ -17,5 +18,6 @@ defmodule WeWorkForBeer.FloorBeer do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> validate_unique(:beer_id, [on: Repo, scope: [:floor_id]])
   end
 end
