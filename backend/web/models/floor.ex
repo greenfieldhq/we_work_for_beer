@@ -1,10 +1,13 @@
 defmodule WeWorkForBeer.Floor do
   use WeWorkForBeer.Web, :model
 
+  alias WeWorkForBeer.FloorBeer
   alias WeWorkForBeer.Location
 
   schema "floors" do
     belongs_to :location, Location
+    has_many :floor_beers, FloorBeer
+    has_many :beers, through: [:floor_beers, :beer]
 
     field :name, :string
 
