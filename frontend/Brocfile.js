@@ -4,7 +4,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
   dotenv: {
-    clientAllowedKeys: ['FACEBOOK_CLIENT_ID']
+    clientAllowedKeys: [
+      'FACEBOOK_CLIENT_ID',
+      'FACEBOOK_REDIRECT_URI',
+      'GOOGLE_ANALYTICS_ID'
+    ]
   }
 });
 
