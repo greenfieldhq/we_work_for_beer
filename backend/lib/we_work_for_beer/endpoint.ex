@@ -26,8 +26,7 @@ defmodule WeWorkForBeer.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: System.get_env("SESSION_KEY"),
-    signing_salt: System.get_env("SIGNING_SALT"),
-    encryption_salt: System.get_env("ENCRYPTION_SALT")
+    signing_salt: System.get_env("SIGNING_SALT")
 
-  plug :router, WeWorkForBeer.Router
+  plug WeWorkForBeer.Router
 end
