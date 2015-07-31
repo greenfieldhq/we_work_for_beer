@@ -39,6 +39,7 @@ defmodule WeWorkForBeer.Beer do
   end
 
   def search(query, search_query) do
+    search_query = search_query <> ":*"
     (from b in query, 
       where: fragment("(to_tsvector('english', name||' '||brewery_name) @@ plainto_tsquery('english', ?))", ^search_query))
   end

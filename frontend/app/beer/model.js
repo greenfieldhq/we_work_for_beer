@@ -7,6 +7,7 @@ export default DS.Model.extend({
 
   name: attr('string'),
   breweryName: attr('string'),
+  style: attr('string'),
   iconSmall: attr('string'),
   iconMedium: attr('string'),
   iconLarge: attr('string')

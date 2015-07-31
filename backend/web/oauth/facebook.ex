@@ -6,7 +6,7 @@ defmodule WeWorkForBeer.Facebook do
       strategy: __MODULE__,
       client_id: System.get_env("FACEBOOK_CLIENT_ID"),
       client_secret: System.get_env("FACEBOOK_CLIENT_SECRET"),
-      redirect_uri: System.get_env("FB_REDIRECT_URI"),
+      redirect_uri: System.get_env("FACEBOOK_REDIRECT_URI"),
       site: "https://graph.facebook.com/v2.3",
       authorize_url: "https://www.facebook.com/dialog/oauth",
       token_url: "https://graph.facebook.com/oauth/access_token"

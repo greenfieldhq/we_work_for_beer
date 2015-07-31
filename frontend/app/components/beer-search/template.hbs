@@ -2,8 +2,10 @@
 
 <div class="list-group">
   {{#each beers as |beer|}}
-    <div {{action "select" beer}} class="list-group__item">
-      {{beer.name}}
+    <div {{action "select" beer}} class="list-group__item search-result">
+      <div class="beer-name">{{beer.name}}</div>
+      <div class="brewery-name">{{beer.breweryName}}</div>
+      <div class="beer-style">{{beer.style}}</div>
     </div>
   {{/each}}
 </div>
