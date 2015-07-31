@@ -18,9 +18,9 @@ defmodule WeWorkForBeer.BeerControllerTest do
 
   test "lists all entries on index", %{conn: conn} do
     beer1 = Beer.changeset(%Beer{}, Map.put(@valid_attrs, :uid, "123"))
-    |> Repo.insert
+    |> Repo.insert!
     beer2 = Beer.changeset(%Beer{}, Map.put(@valid_attrs, :uid, "456"))
-    |> Repo.insert
+    |> Repo.insert!
 
     conn = get conn, beer_path(conn, :index)
 
@@ -43,7 +43,7 @@ defmodule WeWorkForBeer.BeerControllerTest do
   end
 
   test "shows chosen resource", %{conn: conn} do
-    beer = Repo.insert Beer.changeset(%Beer{}, @valid_attrs)
+    beer = Repo.insert! Beer.changeset(%Beer{}, @valid_attrs)
     conn = get conn, beer_path(conn, :show, beer)
     assert json_response(conn, 200)["beer"] == %{
       "id" => beer.id,

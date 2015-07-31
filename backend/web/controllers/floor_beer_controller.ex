@@ -11,7 +11,7 @@ defmodule WeWorkForBeer.FloorBeerController do
     changeset = FloorBeer.changeset(%FloorBeer{}, floor_beer_params)
 
     if changeset.valid? do
-      floor_beer = Repo.insert(changeset)
+      floor_beer = Repo.insert!(changeset)
       render(conn, "show.json", floor_beer: floor_beer)
     else
       conn

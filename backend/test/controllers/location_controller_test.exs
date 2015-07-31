@@ -10,12 +10,12 @@ defmodule WeWorkForBeer.LocationControllerTest do
   end
 
   test "GET /locations", %{conn: conn} do
-    location1 = Repo.insert %Location{
+    location1 = Repo.insert! %Location{
       name: "South Station",
       city: "Boston",
       address: "745 Atlantic Ave"
     }
-    location2 = Repo.insert %Location{
+    location2 = Repo.insert! %Location{
       name: "DUMBO",
       city: "New York",
       address: "81 Prospect Street"
@@ -43,13 +43,13 @@ defmodule WeWorkForBeer.LocationControllerTest do
   end
 
   test "GET /locations/:id", %{conn: conn} do
-    location = Repo.insert %Location{
+    location = Repo.insert! %Location{
       name: "South Station",
       city: "Boston",
       address: "745 Atlantic Ave"
     }
-    floor1 = Repo.insert %Floor{location_id: location.id, name: "Floor 1"}
-    floor2 = Repo.insert %Floor{location_id: location.id, name: "Floor 2"}
+    floor1 = Repo.insert! %Floor{location_id: location.id, name: "Floor 1"}
+    floor2 = Repo.insert! %Floor{location_id: location.id, name: "Floor 2"}
 
     conn = get conn, location_path(conn, :show, location)
     body = json_response(conn, 200)
