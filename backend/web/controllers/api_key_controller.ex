@@ -5,8 +5,6 @@ defmodule WeWorkForBeer.APIKeyController do
   alias WeWorkForBeer.Facebook
   alias WeWorkForBeer.User
 
-  plug :action
-
   def create(conn, %{"authorizationCode" => auth_code}) do
     user_info = _exchange_auth_code_for_user_info(auth_code)
     user = Map.get(user_info, :uid)

@@ -4,9 +4,6 @@ defmodule WeWorkForBeer.BeerController do
 
   alias WeWorkForBeer.Beer
 
-  plug :scrub_params, "beer" when action in [:create, :update]
-  plug :action
-
   def index(conn, %{"query" => query}) do
     beers =
       from(b in Beer, limit: 20)
