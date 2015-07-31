@@ -7,6 +7,10 @@ export default Ember.Route.extend(
   ApplicationRouteMixin, {
 
   actions: {
+    invalidateSession() {
+      get(this, 'session').invalidate();
+    },
+
     sessionRequiresAuthentication() {
       const session = get(this, 'session');
       const torii = get(this, 'torii');
