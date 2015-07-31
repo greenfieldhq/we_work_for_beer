@@ -64,7 +64,6 @@ defmodule WeWorkForBeer.BeerSeeder do
   defp _head(foo) do
     List.first(foo || [])
   end
-
 end
 
 WeWorkForBeer.BeerSeeder.seed

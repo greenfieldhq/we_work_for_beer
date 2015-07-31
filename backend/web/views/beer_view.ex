@@ -15,7 +15,11 @@ defmodule WeWorkForBeer.BeerView do
       name: beer.name,
       style: beer.style,
       abv: beer.abv,
-      description: beer.description
+      description: beer.description,
+      brewery_name: beer.brewery_name,
+      icon_small: beer.icon_small,
+      icon_medium: beer.icon_medium,
+      icon_large: beer.icon_large
     }
   end
 end
