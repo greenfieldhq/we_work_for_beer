@@ -46,7 +46,7 @@ defmodule WeWorkForBeer.BeerSeeder do
       icon_small: Map.get(api_attrs, "labels") |> _labels |> Map.get("icon"),
       icon_medium: Map.get(api_attrs, "labels") |> _labels |> Map.get("medium"),
       icon_large: Map.get(api_attrs, "labels") |> _labels |> Map.get("large"),
-      brewery_name: hd(Map.get(api_attrs, "breweries")) |> Map.get("name")
+      brewery_name: Map.get(api_attrs, "breweries") |> _head |> _labels |> Map.get("name")
     }
 
     Beer.changeset(%Beer{}, attrs)
@@ -59,6 +59,10 @@ defmodule WeWorkForBeer.BeerSeeder do
 
   defp _labels(foo) do
     foo
+  end
+
+  defp _head(foo) do
+    List.first(foo || [])
   end
 
 end
