@@ -14,7 +14,7 @@ defmodule WeWorkForBeer.APIKeyTest do
 
   test "changeset with valid attributes" do
     changeset = APIKey.changeset(%APIKey{}, @valid_attrs)
-    Repo.insert changeset
+    Repo.insert! changeset
     assert changeset.valid?
   end
 
@@ -30,7 +30,7 @@ defmodule WeWorkForBeer.APIKeyTest do
       last_name: "some content",
       uid: "some content"
     }
-    user = Repo.insert(User.changeset(%User{}, user_attrs))
+    user = Repo.insert!(User.changeset(%User{}, user_attrs))
 
     mocked_date = Timex.Date.now
     with_mock Timex.Date, [:passthrough], [now: fn -> mocked_date end] do

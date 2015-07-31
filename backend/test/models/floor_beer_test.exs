@@ -18,7 +18,7 @@ defmodule WeWorkForBeer.FloorBeerTest do
 
   test "uniqueness of beer scoped to floor" do
     fb = FloorBeer.changeset(%FloorBeer{}, @valid_attrs)
-    Repo.insert(fb)
+    Repo.insert!(fb)
 
     invalid = FloorBeer.changeset(%FloorBeer{}, @valid_attrs)
     valid = FloorBeer.changeset(%FloorBeer{}, %{beer_id: 1, floor_id: 42})

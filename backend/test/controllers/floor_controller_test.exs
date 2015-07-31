@@ -9,11 +9,11 @@ defmodule WeWorkForBeer.FloorControllerTest do
   end
 
   test "GET /floors", %{conn: conn} do
-    floor1 = Repo.insert %Floor{
+    floor1 = Repo.insert! %Floor{
       location_id: 42,
       name: "Floor 7"
     }
-    floor2 = Repo.insert %Floor{
+    floor2 = Repo.insert! %Floor{
       location_id: 42,
       name: "Floor 2"
     }
@@ -38,7 +38,7 @@ defmodule WeWorkForBeer.FloorControllerTest do
   end
 
   test "GET /floors/:id", %{conn: conn} do
-    floor = Repo.insert %Floor{
+    floor = Repo.insert! %Floor{
       location_id: 42,
       name: "Floor 7"
     }

@@ -41,7 +41,7 @@ defmodule WeWorkForBeer.BeerTest do
   test "search/2 - returns beers with names that match the search query" do
     bear_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "123", name: "Grizzly Bear IPA"})
     dolphin_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "456", name: "Dolphin Salt IPA"})
-    cat_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "789", name: "Meow Stout"})
+    _cat_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "789", name: "Meow Stout"})
 
     results = Beer |> Beer.search("IPA") |> Repo.all
 
@@ -51,7 +51,7 @@ defmodule WeWorkForBeer.BeerTest do
   test "search/2 - is case insensitive" do
     bear_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "123", name: "Grizzly Bear IPA"})
     dolphin_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "456", name: "Dolphin Salt IPA"})
-    cat_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "789", name: "Meow Stout"})
+    _cat_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "789", name: "Meow Stout"})
 
     results = Beer |> Beer.search("dolphin") |> Repo.all
 
@@ -61,7 +61,7 @@ defmodule WeWorkForBeer.BeerTest do
   test "search/2 - supports partial matches" do
     bear_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "123", name: "Grizzly Bear IPA"})
     dolphin_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "456", name: "Dolphin Salt IPA"})
-    cat_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "789", name: "Meow Stout"})
+    _cat_beer = Repo.insert! Beer.changeset(%Beer{}, %{uid: "789", name: "Meow Stout"})
 
     results = Beer |> Beer.search("grizz") |> Repo.all
 
