@@ -4,7 +4,6 @@ defmodule WeWorkForBeer.FloorBeerController do
 
   alias WeWorkForBeer.FloorBeer
 
-  plug :scrub_params, "floor_beer" when action in [:create]
   plug :action
 
   def create(conn, %{"floor_beer" => floor_beer_params}) do
@@ -12,6 +11,20 @@ defmodule WeWorkForBeer.FloorBeerController do
 
     if changeset.valid? do
       floor_beer = Repo.insert!(changeset)
+      render(conn, "show.json", floor_beer: floor_beer)
+    else
+      conn
+      |> put_status(:unprocessable_entity)
+      |> render(WeWorkForBeer.ChangesetView, "error.json", changeset: changeset)
+    end
+  end
+
+  def update(conn, %{"id" => id, "floor_beer" => %{"tapped" => tapped}}) do
+    floor_beer = Repo.get(FloorBeer, id)
+    changeset = FloorBeer.changeset(floor_beer, %{tapped: tapped})
+
+    if changeset.valid? do
+      floor_beer = Repo.update(changeset)
       render(conn, "show.json", floor_beer: floor_beer)
     else
       conn

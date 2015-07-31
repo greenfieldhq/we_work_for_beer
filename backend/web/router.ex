@@ -25,7 +25,7 @@ defmodule WeWorkForBeer.Router do
     post "token", APIKeyController, :create
 
     resources "beers", BeerController, only: [:index, :show]
-    resources "floor_beers", FloorBeerController, only: [:create]
+    resources "floor_beers", FloorBeerController, only: [:create, :update]
     resources "floors", FloorController, only: [:index, :show]
     resources "locations", LocationController, only: [:index, :show]
   end

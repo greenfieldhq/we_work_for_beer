@@ -9,7 +9,8 @@ defmodule WeWorkForBeer.FloorBeerView do
     %{
       id: floor_beer.id,
       beer_id: floor_beer.beer_id,
-      floor_id: floor_beer.floor_id
+      floor_id: floor_beer.floor_id,
+      tapped: floor_beer.tapped
     }
   end
 end
