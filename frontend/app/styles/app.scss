@@ -115,10 +115,16 @@ a:visited {
 
 .search-result {
   .beer-name {
+    font-weight: bold;
   }
   .brewery-name {
+    font-style: italic;
   }
   .beer-style {
+    color: #666;
+    font-style: italic;
+  }
+  .beer-image {
   }
 }
 
