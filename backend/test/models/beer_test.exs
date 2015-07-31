@@ -1,3 +1,4 @@
+
 defmodule WeWorkForBeer.BeerTest do
   use WeWorkForBeer.ModelCase
 
