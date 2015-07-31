@@ -10,14 +10,18 @@
           {{beer.name}} / {{beer.breweryName}} <img src="{{{beer.iconSmall}}}">
         </p>
       </div>
+    {{else}}
+      <p>No beers reported on this floor yet.</p>
     {{/each}}
 
-    {{#if isAddingBeer}}
-      {{beer-search beers=searchResults
-        search=(action "search")
-        select=(action "addBeer")}}
-    {{else}}
-      <button {{action "toggleIsAddingBeer"}}>Add a beer</button>
+    {{#if session.isAuthenticated}}
+      {{#if isAddingBeer}}
+        {{beer-search beers=searchResults
+          search=(action "search")
+          select=(action "addBeer")}}
+      {{else}}
+        <button {{action "toggleIsAddingBeer"}}>Add a beer</button>
+      {{/if}}
     {{/if}}
   </div>
 </div>

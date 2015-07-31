@@ -124,6 +124,23 @@ a:visited {
   text-transform: uppercase;
 }
 
+.facebook-login {
+  float: right;
+  margin-left: 1em;
+
+  button {
+    background-color: #445FAD;
+    color: #ffffff;
+    height: 30px;
+    width: 85px;
+    padding-top: 6px;
+  }
+
+  img {
+    height: 16px;
+  }
+}
+
 #powered-by-brewerydb {
   max-height: 25px;
 }
