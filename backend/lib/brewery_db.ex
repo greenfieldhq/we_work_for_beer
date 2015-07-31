@@ -18,6 +18,6 @@ defmodule BreweryDB do
   end
 
   defp default_params do
-    %{key: Application.get_env(:brewery_db, :api_key)}
+    %{key: Application.get_env(:brewery_db, :api_key), withBreweries: "Y"}
   end
 end
