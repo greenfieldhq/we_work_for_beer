@@ -1,7 +1,10 @@
 import Ember from 'ember';
 
-const get = Ember.get;
-const set = Ember.set;
+const {
+  run: { debounce },
+  get,
+  set
+} = Ember;
 
 export default Ember.Component.extend({
   query: null,
@@ -10,7 +13,7 @@ export default Ember.Component.extend({
   actions: {
     search() {
       const query = get(this, 'query');
-      this.getAttr('search')(query);
+      debounce(this, this.getAttr('search'), query, 200);
     },
 
     select(beer) {

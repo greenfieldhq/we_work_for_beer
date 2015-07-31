@@ -97,6 +97,7 @@ a:visited {
 }
 
 .list-group__item {
+  cursor: pointer;
   display: block;
   padding: 0.5em 1em;
   border-bottom: 1px #f7f7f7 solid;
