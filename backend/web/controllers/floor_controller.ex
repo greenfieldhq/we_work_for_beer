@@ -3,8 +3,6 @@ defmodule WeWorkForBeer.FloorController do
 
   alias WeWorkForBeer.Floor
 
-  plug :action
-
   def index(conn, _params) do
     floors = Repo.all(from f in Floor, preload: [:beers])
     render(conn, "index.json", floors: floors)

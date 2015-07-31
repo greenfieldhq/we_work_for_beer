@@ -29,18 +29,17 @@ defmodule WeWorkForBeer.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [
-      {:phoenix, "~> 0.13"},
-      {:phoenix_ecto, "~> 0.5"},
+      {:phoenix, "~> 0.15"},
+      {:phoenix_ecto, "~> 0.9"},
       {:postgrex, ">= 0.0.0"},
-      {:phoenix_html, "~> 1.0"},
-      {:phoenix_live_reload, "~> 0.4"},
+      {:phoenix_html, "~> 2.0"},
+      {:phoenix_live_reload, "~> 0.5", only: :dev},
       {:cowboy, "~> 1.0"},
       {:oauth2, "~> 0.1.1"},
       {:secure_random, "~> 0.1"},
       {:timex, "~> 0.13.4"},
       {:mock, "~> 0.1.1"},
       {:exrm, "~> 0.17.0"},
-      {:relx, github: "erlware/relx"},
       {:meck, "~> 0.8.2", [optional: false, hex: :meck, override: true]}
     ]
   end

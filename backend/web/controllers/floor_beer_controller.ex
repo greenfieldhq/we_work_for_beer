@@ -4,9 +4,6 @@ defmodule WeWorkForBeer.FloorBeerController do
 
   alias WeWorkForBeer.FloorBeer
 
-  plug :scrub_params, "floor_beer" when action in [:create]
-  plug :action
-
   def create(conn, %{"floor_beer" => floor_beer_params}) do
     changeset = FloorBeer.changeset(%FloorBeer{}, floor_beer_params)
 
