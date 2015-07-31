@@ -26,13 +26,15 @@ defmodule WeWorkForBeer.FloorControllerTest do
         "id" => floor1.id,
         "name" => floor1.name,
         "location_id" => floor1.location_id,
-        "beer_ids" => []
+        "beer_ids" => [],
+        "floor_beer_ids" => []
       },
       %{
         "id" => floor2.id,
         "name" => floor2.name,
         "location_id" => floor2.location_id,
-        "beer_ids" => []
+        "beer_ids" => [],
+        "floor_beer_ids" => []
       }
     ]
   end
