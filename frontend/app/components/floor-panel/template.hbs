@@ -6,7 +6,9 @@
   <div class="panel__body">
     {{#each floor.beers as |beer|}}
       <div class="beers">
-        <p class="beer">{{beer.name}}</p>
+        <p class="beer">
+          {{beer.name}} / {{beer.breweryName}} <img src="{{{beer.iconSmall}}}">
+        </p>
       </div>
     {{/each}}
 

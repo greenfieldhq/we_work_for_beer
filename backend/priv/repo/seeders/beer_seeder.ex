@@ -1,6 +1,7 @@
 defmodule WeWorkForBeer.BeerSeeder do
   alias WeWorkForBeer.Beer
   alias WeWorkForBeer.Repo
+  require IEx
 
   def seed do
     total_pages = BreweryDB.Beer.list
@@ -41,11 +42,27 @@ defmodule WeWorkForBeer.BeerSeeder do
       name: Map.get(api_attrs, "nameDisplay"),
       style: Map.get(style, "shortName"),
       abv: Map.get(api_attrs, "abv"),
-      description: Map.get(api_attrs, "description")
+      description: Map.get(api_attrs, "description"),
+      icon_small: Map.get(api_attrs, "labels") |> _labels |> Map.get("icon"),
+      icon_medium: Map.get(api_attrs, "labels") |> _labels |> Map.get("medium"),
+      icon_large: Map.get(api_attrs, "labels") |> _labels |> Map.get("large"),
+      brewery_name: Map.get(api_attrs, "breweries") |> _head |> _labels |> Map.get("name")
     }
 
     Beer.changeset(%Beer{}, attrs)
     |> Repo.insert!
+  end
+
+  defp _labels(nil) do
+    %{}
+  end
+
+  defp _labels(foo) do
+    foo
+  end
+
+  defp _head(foo) do
+    List.first(foo || [])
   end
 end
 
