@@ -1,24 +1,26 @@
-<div class="sidebar">
-  <div class="panel">
-    <div class="panel__header">
-      <h1 class="panel__title">Locations</h1>
-    </div>
-
-    <div class="locations-list list-group">
-      {{#each model key="id" as |location|}}
-        {{#link-to "locations.location" location.id}}
-          <div class="location list-group__item">
-            {{location.name}}
-            <span class="city">
-              {{location.city}}
-            </span>
-          </div>
-        {{/link-to}}
-      {{/each}}
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Locations</h3>
+      </div>
+      <div class="panel-body">
+        <div class="locations-list list-group">
+          {{#each model key="id" as |location|}}
+            {{#link-to "locations.location" location.id}}
+              <div class="location list-group__item">
+                {{location.name}}
+                <span class="city">
+                  {{location.city}}
+                </span>
+              </div>
+            {{/link-to}}
+          {{/each}}
+        </div>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="main-content">
-  {{outlet}}
+  <div class="col-md-8">
+    {{outlet}}
+  </div>
 </div>

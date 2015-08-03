@@ -2,11 +2,15 @@
 
 <div class="list-group">
   {{#each beers as |beer|}}
-    <div {{action "select" beer}} class="list-group__item search-result">
-      <div class="beer-name">{{beer.name}}</div>
-      <div class="brewery-name">{{beer.breweryName}}</div>
-      <div class="beer-style">{{beer.style}}</div>
-      <div class="beer-image"><img src="{{{beer.iconSmall}}}"/></div>
+    <div {{action "select" beer}} class="list-group__item search-result row">
+      <div class="col-md-2">
+        <div class="beer-image"><img src="{{{beer.iconSmall}}}"/></div>
+      </div>
+      <div class="col-md-6">
+        <div class="beer-name">{{beer.name}}</div>
+        <div class="brewery-name">{{beer.breweryName}}</div>
+        <div class="beer-style">{{beer.style}}</div>
+      </div>
     </div>
   {{/each}}
 </div>

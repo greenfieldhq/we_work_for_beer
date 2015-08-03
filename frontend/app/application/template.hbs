@@ -1,34 +1,32 @@
-<header class="site-header">
-  <div class="header">
-    <div class="container">
-      <div class="grid">
-        <div class="grid-cell header-left">
-          <h1 class="header__title">WeWork for Beer</h1>
-        </div>
-        <div class="grid-cell header-right">
-          <a href="http://greenfieldhq.com">
-            <img id="built-by-greenfield" src="assets/images/built-by-greenfield-dark.png"/>
-          </a>
-          <div class="facebook-login">
-            {{#if session.isAuthenticated}}
-              <button {{action 'invalidateSession'}}>Logout</button>
-            {{else}}
-              <button {{action 'sessionRequiresAuthentication'}}>
-                <img src="assets/images/FB-f-Logo__white_1024.png" />
-                Log in
-              </button>
-            {{/if}}
-          </div>
+<header class="header">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="title">WeWork for Beer</h1>
+    </div>
+    <div class="col-md-6 text-right">
+      <div class="built-by">
+        <a href="http://greenfieldhq.com">
+          <img id="built-by-greenfield" src="assets/images/built-by-greenfield-dark.png"/>
+        </a>
+        <div class="facebook-login">
+          {{#if session.isAuthenticated}}
+            <button {{action 'invalidateSession'}}>Logout</button>
+          {{else}}
+            <button {{action 'sessionRequiresAuthentication'}}>
+              <img src="assets/images/FB-f-Logo__white_1024.png" />
+              Log in
+            </button>
+          {{/if}}
         </div>
       </div>
     </div>
-  </div>
+  </div>  
+  </div>  
 </header>
 
 <div class="container">
-  <div class="grid">
-    {{outlet}}
-  </div>
+  {{outlet}}
 </div>
 
 <div class="container">

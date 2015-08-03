@@ -1,8 +1,8 @@
 @import "bower_components/normalize.css/normalize";
+@import "bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 $black: #000000;
 $white: #FFFFFF;
-$grid-gutter: 1.5em;
 
 body {
   background-color: #E0E0E0;
@@ -14,81 +14,18 @@ a:visited {
   text-decoration: none;
 }
 
-.grid {
-  display: flex;
-  margin: -$grid-gutter 0 0 -$grid-gutter;
-}
-
-.grid-cell {
-  flex: 1;
-}
-
-.sidebar {
-  flex: 0 0 33.33333%;
-  margin: $grid-gutter 0 0 0;
-}
-
-.main-content {
-  flex: 1;
-  margin: $grid-gutter 0 0 $grid-gutter;
-}
-
-.container {
-  max-width: 60em;
-  margin: 0 auto;
-}
-
-.panel {
-  background-color: $white;
-  border-bottom: 3px solid #c4c3c3;
-  margin-bottom: 1em;
-}
-
-.panel__header {
-  padding: 1em;
-  background-color: #f7f7f7;
-  text-align: center;
-}
-
-.panel__title {
-  margin: 0;
-  color: #252729;
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.panel__body {
-  padding: 1em;
-}
-
-.site-header {
-  margin-bottom: 2em;
-}
-
 .header {
-  padding: 1.5em;
   background-color: #252729;
   color: $white;
-  margin: 0;
+  margin: 0px 0px 20px 0px;
   border-bottom: 3px solid #AED064;
-
-  .grid {
-    margin: -0.5em 0 -0.5em;
-    flex-wrap: wrap;
+  h1.title {
+    margin-top: 18px;
+    margin-bottom: 20px;
   }
-
-  .header-left {
-    flex-basis: auto;
+  div.built-by {
+    margin-top: 20px;
   }
-
-  .header-right {
-    flex-basis: auto;
-    text-align: right;
-  }
-}
-
-.header__title {
-  margin: 0;
 }
 
 .list-group {
@@ -128,8 +65,24 @@ a:visited {
   }
 }
 
+.beer {
+  display: flex;
+  align-items: center;
+
+  .beer-name, .brewery-name {
+    max-width: 350px;
+    word-wrap: break-word;
+    font-style: italic;
+    font-size: 18px;
+  }
+  .beer-style {
+    color: #666;
+  }
+  .beer-image {
+  }
+}
+
 .locations-list a {
-  font-size: 0.8em;
   text-transform: uppercase;
 }
 
@@ -178,7 +131,6 @@ a:visited {
 
 #built-by-greenfield {
   max-height: 30px;
-  padding-top: 2px;
 }
 
 footer {

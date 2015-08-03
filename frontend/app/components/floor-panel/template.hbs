@@ -1,14 +1,20 @@
-<div class="floor panel">
-  <div class="panel__header">
-    <h3 class="panel__title">{{floor.name}}</h3>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{floor.name}}</h3>
   </div>
-
-  <div class="panel__body">
+  <div class="panel-body">
     {{#each floor.beers as |beer|}}
-      <div class="beers">
-        <p class="beer">
-          {{beer.name}} / {{beer.breweryName}} <img src="{{{beer.iconMedium}}}">
-        </p>
+      <div class="container">
+        <div class="row beer">
+          <div class="col-md-3">
+            <div class="beer-image"><img src="{{{beer.iconMedium}}}"/></div>
+          </div>
+          <div class="col-md-8">
+            <div class="beer-name"><h2>{{beer.name}}</h2></div>
+            <div class="brewery-name">{{beer.breweryName}}</div>
+            <div class="beer-style">{{beer.style}}</div>
+          </div>
+        </div>
       </div>
     {{else}}
       <p>No beers reported on this floor yet.</p>
